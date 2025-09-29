@@ -1,0 +1,133 @@
+{
+	"info": {
+		"_postman_id": "d3c73a5c-b988-41f7-9a56-e76b8a6acd86",
+		"name": "Alertas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "32394090"
+	},
+	"item": [
+		{
+			"name": "create-alert",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"sensor_id\": \"sensor-praca-da-bandeira-02\",\r\n  \"water_level_cm\": 315.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/alerts"
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"sensor_id\": \"sensor-praca-da-bandeira-03\",\r\n  \"water_level_cm\": 315.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:3000/api/alerts"
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "156"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9c-hOMZYFebxPOer9hXrYPB+j/aw2Q\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 20:34:53 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"alert_id\": 2,\n    \"timestamp\": \"2025-09-29T20:34:53.424Z\",\n    \"sensor_id\": \"sensor-praca-da-bandeira-03\",\n    \"water_level_cm\": 315.7,\n    \"latitude\": -8.061,\n    \"longitude\": -34.879\n}"
+				}
+			]
+		},
+		{
+			"name": "get-recent-alerts",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": [
+				{
+					"name": "response",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:3000/api/alerts/recent"
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": null,
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "158"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"9e-DR2mIab0+7s2oaghaFJjpk5XnKw\""
+						},
+						{
+							"key": "Date",
+							"value": "Mon, 29 Sep 2025 20:34:10 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "[\n    {\n        \"alert_id\": 1,\n        \"timestamp\": \"2025-09-29T20:32:56.486Z\",\n        \"sensor_id\": \"sensor-praca-da-bandeira-02\",\n        \"water_level_cm\": 315.7,\n        \"latitude\": -8.061,\n        \"longitude\": -34.879\n    }\n]"
+				}
+			]
+		}
+	]
+}
