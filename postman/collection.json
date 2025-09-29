@@ -8,12 +8,38 @@
 	"item": [
 		{
 			"name": "create-alert",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 201 Created\", function () {\r",
+							"    pm.response.to.have.status(201);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is valid JSON\", function () {\r",
+							"    pm.response.to.be.json;\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response body contains essential properties\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.have.property('alert_id');\r",
+							"    pm.expect(responseData).to.have.property('sensor_id');\r",
+							"    pm.expect(responseData).to.have.property('timestamp');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n  \"sensor_id\": \"sensor-praca-da-bandeira-02\",\r\n  \"water_level_cm\": 315.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
+					"raw": "{\r\n  \"sensor_id\": \"Avenida-teste-0122\",\r\n  \"water_level_cm\": 515.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -24,13 +50,13 @@
 			},
 			"response": [
 				{
-					"name": "response",
+					"name": "create-alert",
 					"originalRequest": {
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n  \"sensor_id\": \"sensor-praca-da-bandeira-03\",\r\n  \"water_level_cm\": 315.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
+							"raw": "{\r\n  \"sensor_id\": \"Avenida-teste-0122\",\r\n  \"water_level_cm\": 515.7,\r\n  \"latitude\": -8.061,\r\n  \"longitude\": -34.879\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -41,7 +67,7 @@
 					},
 					"status": "Created",
 					"code": 201,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "",
 					"header": [
 						{
 							"key": "X-Powered-By",
@@ -53,15 +79,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "156"
+							"value": "147"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"9c-hOMZYFebxPOer9hXrYPB+j/aw2Q\""
+							"value": "W/\"93-DNOVOUMTa08BZeRs5hD5wifr4+w\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 29 Sep 2025 20:34:53 GMT"
+							"value": "Mon, 29 Sep 2025 21:04:10 GMT"
 						},
 						{
 							"key": "Connection",
@@ -73,19 +99,40 @@
 						}
 					],
 					"cookie": [],
-					"body": "{\n    \"alert_id\": 2,\n    \"timestamp\": \"2025-09-29T20:34:53.424Z\",\n    \"sensor_id\": \"sensor-praca-da-bandeira-03\",\n    \"water_level_cm\": 315.7,\n    \"latitude\": -8.061,\n    \"longitude\": -34.879\n}"
+					"body": "{\n    \"alert_id\": 1,\n    \"timestamp\": \"2025-09-29T21:04:10.832Z\",\n    \"sensor_id\": \"Avenida-teste-0122\",\n    \"water_level_cm\": 515.7,\n    \"latitude\": -8.061,\n    \"longitude\": -34.879\n}"
 				}
 			]
 		},
 		{
 			"name": "get-recent-alerts",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200 OK\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response is an array\", function () {\r",
+							"    const responseData = pm.response.json();\r",
+							"    pm.expect(responseData).to.be.an('array');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {},
+						"requests": {}
+					}
+				}
+			],
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": "http://localhost:3000/api/alerts/recent"
 			},
 			"response": [
 				{
-					"name": "response",
+					"name": "get-recent-alerts",
 					"originalRequest": {
 						"method": "GET",
 						"header": [],
@@ -93,7 +140,7 @@
 					},
 					"status": "OK",
 					"code": 200,
-					"_postman_previewlanguage": null,
+					"_postman_previewlanguage": "",
 					"header": [
 						{
 							"key": "X-Powered-By",
@@ -105,15 +152,15 @@
 						},
 						{
 							"key": "Content-Length",
-							"value": "158"
+							"value": "149"
 						},
 						{
 							"key": "ETag",
-							"value": "W/\"9e-DR2mIab0+7s2oaghaFJjpk5XnKw\""
+							"value": "W/\"95-eYpuHPIDWi2abebyEEKe5KMA4QM\""
 						},
 						{
 							"key": "Date",
-							"value": "Mon, 29 Sep 2025 20:34:10 GMT"
+							"value": "Mon, 29 Sep 2025 21:04:56 GMT"
 						},
 						{
 							"key": "Connection",
@@ -125,7 +172,7 @@
 						}
 					],
 					"cookie": [],
-					"body": "[\n    {\n        \"alert_id\": 1,\n        \"timestamp\": \"2025-09-29T20:32:56.486Z\",\n        \"sensor_id\": \"sensor-praca-da-bandeira-02\",\n        \"water_level_cm\": 315.7,\n        \"latitude\": -8.061,\n        \"longitude\": -34.879\n    }\n]"
+					"body": "[\n    {\n        \"alert_id\": 1,\n        \"timestamp\": \"2025-09-29T21:04:10.832Z\",\n        \"sensor_id\": \"Avenida-teste-0122\",\n        \"water_level_cm\": 515.7,\n        \"latitude\": -8.061,\n        \"longitude\": -34.879\n    }\n]"
 				}
 			]
 		}
