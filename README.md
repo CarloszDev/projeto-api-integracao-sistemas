@@ -4,5 +4,5 @@
 | ----------------- | ---------- | ---------------------------------------------- |
 | Carlos Cauan Moreira Da Silva | [2326258] | Desenvolvedor Backend, Testes e Documentação   |
 | José Danilo de Sousa | [2326306] | Análise de Requisitos e Arquitetura da Solução |
-| [Nome do Aluno 3] | [xxxxxxxx] | Documentação Técnica e Testes da API (Postman) |
-| [Nome do Aluno 4] | [xxxxxxxx] | Gerente do Projeto e Apresentação              |
+| Francisca Nilcilany Da Silva | [2326211] | Documentação Técnica e Testes da API (Postman) |
+| André Augusto Cesar Queiroz | [2326177] | Gerente do Projeto e Apresentação              |
