@@ -6,4 +6,5 @@
 | José Danilo de Sousa | [2326306] | Análise de Requisitos e Arquitetura da Solução |
 | Francisca Nilcilany Da Silva | [2326211] | Documentação Técnica e Testes da API (Postman) |
 | Wiulis de Araujo Monteiro | [2326322] | Documentação |
-| Nicole Stefhany Monteiro Amed | [2326323] | Gerente do Projeto e Apresentação |
+| Jonarta Santiago Soares | [232734] | Apresentação |
+| Nicole Stefhany Monteiro Amed | [2326323] | Gerente do Projeto |
